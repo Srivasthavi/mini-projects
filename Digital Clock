@@ -1,0 +1,53 @@
+#mini project-5:
+#digital clock
+using html css and javascript developeda digital clock.
+
+to run this
+just save the code in a file as filename.html
+
+My code:
+<!DOCTYPE html>
+<html>
+<style>
+h1
+{
+font-size:25pt;
+text-align:center;
+}
+div {
+margin:0.1in;
+padding: 0.2in;
+background-color: black;
+border-style: solid;
+border-color: gray;
+color: white;
+font-size: 50pt;
+text-align:center;
+}
+h5
+{
+text-align:right;
+}
+</style>
+<body onload="digitalClock()">
+<h1>Digital Clock</h1>
+<div id="txt"></div>
+<script>
+function digitalClock(){
+const t=new Date();
+var h = t.getHours();
+var m = t.getMinutes();
+var s = t.getSeconds();
+h = digitLayout(h);
+m = digitLayout(m);
+s = digitLayout(s);
+document.getElementById('txt').innerHTML = h +":" + m + ":" +s;
+setTimeout(digitalClock, 1000);
+}
+function digitLayout(n){
+if (n < 10) {n = "0" + n};
+return n;
+}
+</script>
+</body>
+</html>
