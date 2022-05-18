@@ -1,6 +1,6 @@
 #MINI PROJECT-1:
 #DESKTOP NOTIFIER:
- I've developed a desktop notifer using python on the latest postive covid cases and deaths in India.
+ I've developed a desktop notifer using web scarping with python on the latest postive covid cases and deaths in India.
  
  To run this save the file as filename.py and then open command prompt and compiler adn run the python file.
  If u get errors that means:
