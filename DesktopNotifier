@@ -1,0 +1,33 @@
+#MINI PROJECT-1:
+#DESKTOP NOTIFIER:
+ I've developed a desktop notifer using python on the latest postive covid cases and deaths in India.
+ 
+ To run this save the file as filename.py and then open command prompt and compiler adn run the python file.
+ If u get errors that means:
+ 1. you need to install the required packages(use import)
+ 2. python path needs to be checked
+ 
+ My code:
+ 
+from urllib.request import urlopen, Request
+from  bs4 import BeautifulSoup as bs
+from win10toast import ToastNotifier
+header={"User-Agent":"Mozilla"}
+req=Request("https://www.worldometers.info/coronavirus/country/india/",headers=header)
+html=urlopen(req)
+html.status
+obj=bs(html)
+nc= obj.find("li", {"class":"news_li"}).strong.text.split()[0]
+death=list(obj.find("li", {"class":"news_li"}).strong.next_siblings)[1].text.split()[0]
+nc
+death
+notifier=ToastNotifier()
+message= "New Cases = "+nc+ "   Deaths = "+death
+message
+notifier.show_toast(title="COVID-19 Update",msg=message,duration=2)
+
+
+
+
+
+
